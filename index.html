@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#536DFE" />
+    <meta name="application-name" content="Focusly" />
+    <meta name="apple-mobile-web-app-title" content="Focusly" />
+    <meta name="description" content="Focusly؛ همراه هوشمند برنامه‌ریزی، تمرکز و پیگیری پیشرفت روزانه و هفتگی" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <title>Focusly — تمرکز کن، پیشرفتت را ببین</title>
+    <!-- پیش از اولین رنگ‌آمیزی، حالت تیره اعمال می‌شود تا صفحه‌ی سفید چشمک نزند.
+         کلید 'planner:theme' باید با BRAND.storagePrefix در src/config/brand.ts یکی باشد. -->
+    <script>
+      try {
+        var m = localStorage.getItem('planner:theme');
+        if (m === 'dark' || ((m === null || m === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
